@@ -23,11 +23,13 @@ introduction:
 # http:
 #   base_url: example.duckdns.org:8123
 http:
-  server_port: 443
   api_password: !secret http_password
-  base_url: https://myhome-assistant.duckdns.org:8123
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
+# ssl config
+# port forwarding in router form 8123-8123 to 8123(external)-433(internal)
+#  server_port: 443
+#  base_url: https://myhome-assistant.duckdns.org:8123
+#  ssl_certificate: /ssl/fullchain.pem
+#  ssl_key: /ssl/privkey.pem
 
 # Discover some devices automatically
 discovery:
@@ -40,6 +42,21 @@ sensor:
 # Text to speech
 tts:
   - platform: google
+
+switch:
+  # broadlink
+  - platform: broadlink
+    host: 192.168.1.4
+    mac: '34:ea:34:c7:6a:d4'
+    switches:
+      tv:
+        friendly_name: "客厅电视"
+        command_on: "JgCMAE4UKBMTFScUExQnFBMUExQnFBMVEhUTFBMAA01OFSYVExQnFBIWJRUUExQUJxQTFBMUFBQTAANNTRUnFBMVJhQTFSYVEhUTFCYVExUSFRIVEwADT04UJhUTFCcUFBQmFRMUEhUnFBMUExUSFRMAA09NFSYVEhUnFBMUJxQUFBIVJxQTFBMVExQSAA0FAAAAAAAAAAAAAAAA"
+        command_off: "JgCMAE4VJxQSFSYVExQnFBMUExUmFRIVEhUUFBIAA01OFSYVEhUmFRIVJhUTFBMVJhUSFRIVExQUAANMThUnFBIVJhUTFCcUEhUUFCYVEhUTFBMUFAADTk4UJxQTFSYVEhUmFRIVExQnFBMVEhUTFBQAA05NFSYVExQnFBMWJRUSFRMUJxQTFRIVExQTAA0FAAAAAAAAAAAAAAAA"
+      ac:
+        friendly_name: "客厅空调"
+        command_on: "JgB2AW45DCsNDwwPDQ8NDwwPDQ8NDw0PDQ8NDwwPDSoNDw0PDQ4NDw0PDA8NDw4PDA8NDw0PDA8NDw0PDA8NDw0PDCsNDw0rDSoNKg0rDSoNKg0PDioOKgwrDSoNKwwrDSoOKwwrDQ8MDw0PDQ8MDw0PDQ8MDw0PDSsNKg0PDQ8MKw0qDSsNKg4PDA8NKwwrDQ8MDw0PDSoNDw0PDSsMDw0PDQ8NKg0PDCsNKg4ODioNKw0qDQ8MKw0PDA8NDw0PDQ8NDw0PDA8NKg0rDSoNKg4qDioNKg0rDCsNKg0rDSoOKg0PDQ8MDw0PDQ8MDw0PDQ8MKw0rDSoNDw0PDCsNKg0PDQ8NDg4PDSoNKwwPDQ8NKg0rDCsNDw0PDQ8NKg0PDSoNDwwPDSsMKw4qDQ8NKg0PDSoNKg0rDQ4ODw0PDA8NDw0PDA8NDw0qDSsMKw4qDSoNKwwrDQ8MDw0PDQ8MKw4PDA8NKg0rDCsNKg0rDQ4OKg0rDA8NAA0FAAA="
+        command_off: "JgB2AXA4DCsNDw0ODQ8NDw0ODQwQDw0PDQ8NDwwPDSsMDw0PDQ8MDw0PDQ8MDw0PDg4NDw0PDQsQDw0PDQ8MDw0PDSoNDw0qDioNKwwrDSoNKw0LECsNKw0qDSsMKw0qDSsNKg8pDQ8NDw0ODQ8NDwwMEA8NDwwPDSsNKw0PDA8NKwwrDSoNKw0ODg8MKw0qDQ8NDwwPDSoNDw0PDCsODwwPDQ8MKw0PDCsNKg0PDSoPKQ0qDQ8NKg0PDQ8MDw0PDQ8NDg4PDA8NKg0rDCsOKQ0rDCsOKgwrDSoNKwwrDSoOKg0PDQ8MDw0PDQ4NDw0PDQ4NKwwrDioNDw0ODSsMKw0PDA8NDBAPDSsNKg0PDQ8MKwwrDSoNDw4ODQ8NKwwPDSsMDw0PDSoNKw0qDgsQKw0ODioMKw0qDQ8NDw0PDQ8NDwwPDQ8NDwwrDSoNKwwrDSsNKg0rDAwQDw0LEQsQDw0rDQ8NKg0rDCsNKg0rDCsODwwrDA8NAA0FAAA="
 
 group: !include groups.yaml
 automation: !include automations.yaml
