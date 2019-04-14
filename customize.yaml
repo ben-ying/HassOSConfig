@@ -15,8 +15,8 @@ binary_sensor.door_window_sensor_158d0001bf930f:
   friendly_name: 门窗传感器
   homebridge_name: 门窗传感器
 sensor.illumination_7811dcb38873:
-  friendly_name: 照明
-  homebridge_name: 照明
+  friendly_name: 光照度
+  homebridge_name: 光照度
 
 # yahoo
 sensor.yweather_humidity:
