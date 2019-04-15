@@ -17,6 +17,27 @@ binary_sensor.door_window_sensor_158d0001bf930f:
 sensor.illumination_7811dcb38873:
   friendly_name: 光照度
   homebridge_name: 光照度
+light.yeelight_ceiling1_7811dcdc6f60:
+  friendly_name: 书房吸顶灯
+  homebridge_name: 书房吸顶灯
+light.yeelight_ceiling4_7811dc68a059:
+  friendly_name: 客厅吸顶灯
+  homebridge_name: 客厅吸顶灯
+light.yeelight_ceiling4_7811dc68a059_ambilight:
+  friendly_name: 客厅氛围灯
+  homebridge_name: 客厅氛围灯
+light.yeelight_ceiling3_7811dca3e7f9:
+  friendly_name: 客卧吸顶灯 
+  homebridge_name: 客卧吸顶灯
+light.yeelight_ceiling3_7811dca3cdae:
+  friendly_name: 主卧吸顶灯
+  homebridge_name: 主卧吸顶灯
+binary_sensor.yeelight_ceiling3_7811dca3cdae_nightlight:
+  hidden: true
+binary_sensor.yeelight_ceiling3_7811dca3e7f9_nightlight:
+  hidden: true
+binary_sensor.yeelight_ceiling4_7811dc68a059_nightlight:
+  hidden: true
 
 # yahoo
 sensor.yweather_humidity:
